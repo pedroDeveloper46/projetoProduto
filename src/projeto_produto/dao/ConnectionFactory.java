@@ -23,10 +23,10 @@ public class ConnectionFactory {
 
     public Connection conectar() {
     	
-    	String url = "jdbc:postgresql://localhost:5437/JyuwlBCY";
+    	String url = "jdbc:postgresql://localhost:5437/" + System.getenv("DB_NAME");
     	Properties props = new Properties();
-    	props.setProperty("user", "JyuwlBCY");
-    	props.setProperty("password", "0WIGdPU@0?^D&Q");
+    	props.setProperty("user", System.getenv("DB_USER"));
+    	props.setProperty("password", System.getenv("DB_PASS"));
     	props.setProperty("ssl", "false");
     	props.setProperty("currentSchema", "projetoproduto");
         try {
