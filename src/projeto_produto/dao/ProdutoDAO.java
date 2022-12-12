@@ -8,12 +8,14 @@ package projeto_produto.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
 import net.proteanit.sql.DbUtils;
 import projeto_produto.model.Produto;
+import projeto_produto.utils.Helper;
 
 /**
  *
@@ -47,7 +49,7 @@ public class ProdutoDAO {
             pst.setString(9, produto.getBarCode());
             pst.setInt(10, produto.getNcm());
             pst.setDouble(11, produto.getFator());
-            pst.setString(12, produto.getData());
+            pst.setTimestamp(12, Timestamp.from(Helper.getDate().toInstant()));
             pst.setString(13, produto.getImagem());
             
             pst.executeUpdate();
