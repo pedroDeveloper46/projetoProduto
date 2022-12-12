@@ -3,27 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetoproduto.view;
+package projeto_produto.view;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import javax.imageio.ImageIO;
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.awt.print.PrinterException;
-import java.sql.Date;
-import javax.swing.JTable;
+import java.io.File;
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
-import projetoproduto.dao.ProdutoDAO;
-import projetoproduto.model.Produto;
-import projetoproduto.utils.Helper;
+
+import projeto_produto.dao.ProdutoDAO;
+import projeto_produto.model.Produto;
+import projeto_produto.utils.Helper;
 
 /**
  *

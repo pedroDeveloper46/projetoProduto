@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetoproduto.dao;
+package projeto_produto.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 public class ConnectionFactory {
     
     private Connection connection = null;
-    private Statement statement = null;
+//    private Statement statement = null;
     
 
     public Connection conectar() {
@@ -28,7 +28,7 @@ public class ConnectionFactory {
         try {
             Class.forName(driver);
             this.connection = DriverManager.getConnection(servidor, usuario, senha);
-            this.statement = this.connection.createStatement();
+//            this.statement = this.connection.createStatement();
             
             return this.connection;
             

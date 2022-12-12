@@ -3,10 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetoproduto.model;
-
-import java.sql.Date;
-
+package projeto_produto.model;
 
 /**
  *

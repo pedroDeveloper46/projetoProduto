@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetoproduto.dao;
+package projeto_produto.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import projetoproduto.dao.ConnectionFactory;
-import projetoproduto.model.Produto;
+
 import net.proteanit.sql.DbUtils;
+import projeto_produto.model.Produto;
 
 /**
  *

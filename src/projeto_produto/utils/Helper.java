@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetoproduto.utils;
+package projeto_produto.utils;
 
-import java.util.Date;
+import java.time.OffsetDateTime;
 
 /**
  *
@@ -13,8 +13,8 @@ import java.util.Date;
  */
 public class Helper {
     
-    public static Date getDate(){
-        return new Date();
+    public static OffsetDateTime getDate(){
+        return OffsetDateTime.now();
     }
     
 }

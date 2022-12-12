@@ -3,11 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetoproduto;
-import  projetoproduto.view.FormProduto;
-
-import projetoproduto.dao.ConnectionFactory;
-import projetoproduto.view.Menu;
+package projeto_produto;
+import projeto_produto.view.Menu;
 
 /**
  *
