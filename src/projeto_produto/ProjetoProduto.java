@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package projeto_produto;
+import java.util.Objects;
+
+import projeto_produto.dao.ConnectionFactory;
 import projeto_produto.view.Menu;
 
 /**
@@ -17,7 +20,15 @@ public class ProjetoProduto {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Menu.main(args);
+    	ConnectionFactory cf = new ConnectionFactory();
+    	
+    	
+    	if(Objects.isNull(cf.conectar())) {
+    		return;
+    	}
+    	
+        cf.desconectar();
+    	Menu.main(args);
     }
     
 }

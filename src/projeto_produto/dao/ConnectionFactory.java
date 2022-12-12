@@ -7,7 +7,8 @@ package projeto_produto.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
+import java.util.Properties;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -21,13 +22,16 @@ public class ConnectionFactory {
     
 
     public Connection conectar() {
-        String servidor = "jdbc:mysql://localhost:3306/projetoProduto";
-        String usuario = "root";
-        String senha = "root";
-        String driver = "com.mysql.cj.jdbc.Driver";
+    	
+    	String url = "jdbc:postgresql://localhost:5437/JyuwlBCY";
+    	Properties props = new Properties();
+    	props.setProperty("user", "JyuwlBCY");
+    	props.setProperty("password", "0WIGdPU@0?^D&Q");
+    	props.setProperty("ssl", "false");
+    	props.setProperty("currentSchema", "projetoproduto");
         try {
-            Class.forName(driver);
-            this.connection = DriverManager.getConnection(servidor, usuario, senha);
+        	Class.forName("org.postgresql.Driver");
+            this.connection = DriverManager.getConnection(url, props);
 //            this.statement = this.connection.createStatement();
             
             return this.connection;
