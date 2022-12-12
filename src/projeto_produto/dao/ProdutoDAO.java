@@ -33,7 +33,7 @@ public class ProdutoDAO {
     
     public void inserirProduto(Produto produto){
         try {
-            pst = cn.prepareStatement("insert into produto(statusproduto,nome,descricao,qtd_estoque,estoque_minimo,estoque_maximo,preco_compra,"
+            pst = cn.prepareStatement("insert into produto(status_produto,nome,descricao,qtd_estoque,estoque_minimo,estoque_maximo,preco_compra,"
                     + "preco_venda,bar_code,ncm,fator,data_cadastro,imagem) "
                     + "               values (?,?,?,?,?,?,?,?,?,?,?,?,?)"); 
             pst.setString(1,produto.getStatusProduto());
