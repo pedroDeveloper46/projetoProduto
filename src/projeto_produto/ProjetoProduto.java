@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package projeto_produto;
+
 import java.util.Objects;
 
 import projeto_produto.dao.ConnectionFactory;

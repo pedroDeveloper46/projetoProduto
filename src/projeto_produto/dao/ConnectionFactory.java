@@ -19,14 +19,13 @@ public class ConnectionFactory {
     
     private Connection connection = null;
 //    private Statement statement = null;
-    
-
+ 
     public Connection conectar() {
     	
-    	String url = "jdbc:postgresql://localhost:5437/" + System.getenv("DB_NAME");
+    	String url = "jdbc:postgresql://localhost:5437/" + System.getenv("DB_NAME_PROJETOPRODUTO");
     	Properties props = new Properties();
-    	props.setProperty("user", System.getenv("DB_USER"));
-    	props.setProperty("password", System.getenv("DB_PASS"));
+    	props.setProperty("user", System.getenv("DB_USER_PROJETOPRODUTO"));
+    	props.setProperty("password", System.getenv("DB_PASS_PROJETOPRODUTO"));
     	props.setProperty("ssl", "false");
     	props.setProperty("currentSchema", "projetoproduto");
         try {

@@ -472,7 +472,6 @@ public class FormProduto extends javax.swing.JFrame {
             p.setQtdEstoque(Integer.parseInt(txtQtd.getText()));
             p.setPrecoCompra(Double.parseDouble(txtPrecoCompra.getText()));
             p.setPrecoVenda(Double.parseDouble(txtPrecoVenda.getText()));
-            p.setData(txtData.getText());
             produtoDAO.inserirProduto(p);
 
         } catch (Exception e) {
@@ -625,7 +624,6 @@ public class FormProduto extends javax.swing.JFrame {
             p.setQtdEstoque(Integer.parseInt(txtQtd.getText()));
             p.setPrecoCompra(Double.parseDouble(txtPrecoCompra.getText()));
             p.setPrecoVenda(Double.parseDouble(txtPrecoVenda.getText()));
-            p.setData(txtData.getText());
             produtoDAO.atualizarProduto(p);
 
         } catch (Exception e) {

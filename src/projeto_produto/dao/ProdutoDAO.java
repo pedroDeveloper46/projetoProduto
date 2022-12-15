@@ -12,8 +12,9 @@ import java.sql.Timestamp;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
-import net.proteanit.sql.DbUtils;
 import projeto_produto.model.Produto;
 import projeto_produto.utils.Helper;
 
@@ -62,8 +63,8 @@ public class ProdutoDAO {
     
     public void atualizarProduto(Produto produto){
         try {
-            pst = cn.prepareStatement("update produto set statusproduto = ?, nome = ?, descricao = ?, qtd_estoque = ?, estoque_minimo = ?, "
-                    + "estoque_maximo = ?, preco_compra = ?, preco_venda = ?, bar_code = ?, ncm = ?, fator = ?, data_cadastro = ?, imagem = ? where id = ?"); 
+            pst = cn.prepareStatement("update produto set status_produto = ?, nome = ?, descricao = ?, qtd_estoque = ?, estoque_minimo = ?, "
+                    + "estoque_maximo = ?, preco_compra = ?, preco_venda = ?, bar_code = ?, ncm = ?, fator = ?, imagem = ? where id = ?"); 
 
             pst.setString(1,produto.getStatusProduto());
             pst.setString(2,produto.getNome());
@@ -76,9 +77,8 @@ public class ProdutoDAO {
             pst.setString(9, produto.getBarCode());
             pst.setInt(10, produto.getNcm());
             pst.setDouble(11, produto.getFator());
-            pst.setString(12, produto.getData());
-            pst.setString(13, produto.getImagem());
-            pst.setInt(14, produto.getId());
+            pst.setString(12, produto.getImagem());
+            pst.setInt(13, produto.getId());
             JOptionPane.showMessageDialog(null, "Produto Alterado");
             pst.execute();
             
@@ -90,7 +90,7 @@ public class ProdutoDAO {
     
     public void desativarProduto(Produto produto){
         try {
-            pst = cn.prepareStatement("update produto set statusproduto = ? where id = ?"); 
+            pst = cn.prepareStatement("update produto set status_produto = ? where id = ?"); 
             pst.setString(1, produto.getStatusProduto());
             pst.setInt(2, produto.getId());
             pst.execute();
@@ -105,7 +105,7 @@ public class ProdutoDAO {
     
     public void ativarProduto(Produto produto){
         try {
-            pst = cn.prepareStatement("update produto set statusproduto = ? where id = ?"); 
+            pst = cn.prepareStatement("update produto set status_produto = ? where id = ?"); 
             pst.setString(1, produto.getStatusProduto());
             pst.setInt(2, produto.getId());
             pst.execute();
@@ -123,7 +123,10 @@ public class ProdutoDAO {
         try {
             pst = cn.prepareStatement("select * from produto");
             rs = pst.executeQuery();
-            table.setModel(DbUtils.resultSetToTableModel(rs));
+            TableModel tm = new DefaultTableModel();
+            tm.setValueAt("oi", 0, 0);
+//            tm.
+//            table.setModel(DbUtils.resultSetToTableModel(rs));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro na Consulta");
         }
