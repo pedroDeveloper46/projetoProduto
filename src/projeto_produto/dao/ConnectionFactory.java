@@ -43,12 +43,7 @@ public class ConnectionFactory {
     }
 
     public boolean estaConectado() {
-
-        if (this.connection != null) {
-            return true;
-        } else {
-            return false;
-        }
+    	return this.connection != null;
     }
 
     public void desconectar() {
